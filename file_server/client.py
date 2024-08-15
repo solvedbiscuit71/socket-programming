@@ -8,7 +8,8 @@ LIST=b'\x02'
 SUCCESS=b'\x00'
 ERROR=b'\x01'
 
-serverAddress = ('localhost',12000)
+hostaddr = input("Enter server IP (default: localhost): ")
+serverAddress = (hostaddr if len(hostaddr) > 0 else 'localhost', 12000)
 
 def does_exists(name):
     return os.path.exists(name) and os.path.isfile(name)
